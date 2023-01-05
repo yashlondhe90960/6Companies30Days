@@ -1,38 +1,34 @@
-# 299. Bulls and Cows
+# Minimum Deletions to Make Array Divisible
+
 
 ## Description
 
-You are playing the Bulls and Cows game with your friend.
+You are given two positive integer arrays nums and numsDivide. You can delete any number of elements from nums.
 
-You write down a secret number and ask your friend to guess what the number is. When your friend makes a guess, you provide a hint with the following info:
+Return the minimum number of deletions such that the smallest element in nums divides all the elements of numsDivide. If this is not possible, return -1.
 
--The number of "bulls", which are digits in the guess that are in the correct position.
--The number of "cows", which are digits in the guess that are in your secret number but are located in the wrong position. Specifically, the non-bull digits in the guess that could be rearranged such that they become bulls.
-Given the secret number secret and your friend's guess guess, return the hint for your friend's guess.
-
-The hint should be formatted as "xAyB", where x is the number of bulls and y is the number of cows. Note that both secret and guess may contain duplicate digits.
+Note that an integer x divides y if y % x == 0.
  
 Example 1:
 
 
 ```
-Input: secret = "1807", guess = "7810"
-Output: "1A3B"
-Explanation: Bulls are connected with a '|' and cows are underlined:
-"1807"
-  |
-"7810"
+Input: nums = [2,3,2,4,3], numsDivide = [9,6,9,3,15]
+Output: 2
+Explanation: 
+The smallest element in [2,3,2,4,3] is 2, which does not divide all the elements of numsDivide.
+We use 2 deletions to delete the elements in nums that are equal to 2 which makes nums = [3,4,3].
+The smallest element in [3,4,3] is 3, which divides all the elements of numsDivide.
+It can be shown that 2 is the minimum number of deletions needed.
 ```
 
 Example 2:
 
 ```
-Input: secret = "1123", guess = "0111"
-Output: "1A1B"
-Explanation: Bulls are connected with a '|' and cows are underlined:
-"1123"        "1123"
-  |      or     |
-"0111"        "0111"
-Note that only one of the two unmatched 1s is counted as a cow since the non-bull digits can only be rearranged to allow one 1 to be a bull.
+Input: nums = [4,3,6], numsDivide = [8,2,6,10]
+Output: -1
+Explanation: 
+We want the smallest element in nums to divide all the elements of numsDivide.
+There is no way to delete elements from nums to allow this.
 ```
 

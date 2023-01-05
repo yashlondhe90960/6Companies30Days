@@ -1,32 +1,27 @@
-# Minimum Deletions to Make Array Divisible
+# Airplane Seat Assignment Probability
 ## Description
 
-You are given two positive integer arrays nums and numsDivide. You can delete any number of elements from nums.
+n passengers board an airplane with exactly n seats. The first passenger has lost the ticket and picks a seat randomly. But after that, the rest of the passengers will:
 
-Return the minimum number of deletions such that the smallest element in nums divides all the elements of numsDivide. If this is not possible, return -1.
+- Take their own seat if it is still available, and
 
-Note that an integer x divides y if y % x == 0.
+- Pick other seats randomly when they find their seat occupied
+Return the probability that the nth person gets his own seat.
 
  
 
 Example 1:
 
 ```
-Input: nums = [2,3,2,4,3], numsDivide = [9,6,9,3,15]
-Output: 2
-Explanation: 
-The smallest element in [2,3,2,4,3] is 2, which does not divide all the elements of numsDivide.
-We use 2 deletions to delete the elements in nums that are equal to 2 which makes nums = [3,4,3].
-The smallest element in [3,4,3] is 3, which divides all the elements of numsDivide.
-It can be shown that 2 is the minimum number of deletions needed.
+Input: n = 1
+Output: 1.00000
+Explanation: The first person can only get the first seat.
 ```
 
 Example 2:
 
 ```
-Input: nums = [4,3,6], numsDivide = [8,2,6,10]
-Output: -1
-Explanation: 
-We want the smallest element in nums to divide all the elements of numsDivide.
-There is no way to delete elements from nums to allow this.
+Input: n = 2
+Output: 0.50000
+Explanation: The second person has a probability of 0.5 to get the second seat (when first person gets the first seat).
 ```
