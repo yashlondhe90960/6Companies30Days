@@ -1,4 +1,4 @@
-# Minimum Deletions to Make Array Divisible
+# Most Profitable Path in a Tree
 ## Description
 
 You are given two positive integer arrays nums and numsDivide. You can delete any number of elements from nums.
