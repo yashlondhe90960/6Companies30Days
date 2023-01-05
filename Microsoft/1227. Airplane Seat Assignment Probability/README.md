@@ -1,4 +1,4 @@
-# Most Profitable Path in a Tree
+# Airplane Seat Assignment Probability
 ## Description
 
 n passengers board an airplane with exactly n seats. The first passenger has lost the ticket and picks a seat randomly. But after that, the rest of the passengers will:
