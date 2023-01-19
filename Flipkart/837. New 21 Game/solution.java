@@ -1,10 +1,19 @@
 class Solution {
     public double new21Game(int n, int k, int maxPts) {
+        if (k == 0){
+            return 1;
+        }
+
         double[] dp = new double[k + maxPts];
+        double sum = 1;
         dp[0] = 1;
-        for (int i = 0; i < k; i++){
-            for (int j = 1; j <= maxPts; j++){
-                dp[i + j] += dp[i] * 1.0 / maxPts;
+        for (int i = 1; i < k + maxPts; i++){
+            dp[i] = sum / maxPts;
+            if (i >= maxPts){
+                sum -= dp[i - maxPts];
+            }
+            if (i < k){
+                sum += dp[i];
             }
         }
 
